@@ -1,0 +1,76 @@
+@charset "UTF-8";
+
+$font-path: 'fonts';
+$font-title: 'untitled-font-1';
+
+@font-face {
+  font-family: "#{$font-title}";
+  src:url("#{$font-path}/#{$font-title}.eot");
+  src:url("#{$font-path}/#{$font-title}.eot?#iefix") format("embedded-opentype"),
+  url("#{$font-path}/#{$font-title}.woff") format("woff"),
+  url("#{$font-path}/#{$font-title}.ttf") format("truetype"),
+  url("#{$font-path}/#{$font-title}.svg##{$font-title}") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+//[data-icon]:before {
+//  font-family: "#{$font-title}" !important;
+//  content: attr(data-icon);
+//  font-style: normal !important;
+//  font-weight: normal !important;
+//  font-variant: normal !important;
+//  text-transform: none !important;
+//  speak: none;
+//  line-height: 1;
+//  -webkit-font-smoothing: antialiased;
+//  -moz-osx-font-smoothing: grayscale;
+//}
+//
+//[class^="i-"]:before,
+//[class*=" i-"]:before {
+//  font-family: "#{$font-title}" !important;
+//  font-style: normal !important;
+//  font-weight: normal !important;
+//  font-variant: normal !important;
+//  text-transform: none !important;
+//  speak: none;
+//  line-height: 1;
+//  -webkit-font-smoothing: antialiased;
+//  -moz-osx-font-smoothing: grayscale;
+//}
+
+.i-arrow-left:before {
+  content: "\e900";
+}
+.i-arrow-right:before {
+  content: "\e901";
+}
+.i-chevron-right:before {
+  content: "\e902";
+}
+.i-caret-down:before {
+  content: "\e903";
+}
+.i-instagram:before {
+  content: "\e904";
+}
+.i-linkedin:before {
+  content: "\e905";
+}
+
+$color: #fff;
+.i-nav:before {
+  background-image: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M20.6667 8.66667H4V7H20.6667V8.66667ZM16.037 12.8333H4V11.1667H16.037V12.8333ZM20.6667 17H4V15.3333H20.6667V17Z" fill="#{$color}"/></svg>');
+  background-repeat: no-repeat;
+  background-position: center ;
+  background-size: 18px;
+  //content: "\e906";
+}
+.i-search:before {
+  content: "\e907";
+}
+.i-twitter:before {
+  content: "\e908";
+}

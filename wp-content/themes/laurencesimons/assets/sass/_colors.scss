@@ -1,0 +1,78 @@
+@use 'mixins';
+
+// THEME COLOUR
+$colour-purple: #8C78E6;
+$colour-purple-80: #3E3A50;
+$colour-purple-60: #524976;
+
+
+$colour-charcoal: #2B2B2B;
+$colour-charcoal-40: #A7A7A7;
+
+$colour-charcoal-tint-100: rgb(43, 43, 43);
+$colour-charcoal-tint-80: rgba(43, 43, 43, 0.8);
+$colour-charcoal-tint-40: rgba(43, 43, 43, 0.4);
+
+$colour-lemon: #F0F050;
+$colour-lemon-40: rgba(240, 240, 80, 0.4);
+
+$colour-white: #FFFFFF;
+$colour-white-tint-40: rgba(255, 255, 255, 0.4);
+$colour-white-tint-20: rgba(255, 255, 255, 0.2);
+
+$colour-fills-neutral-60: #979799;
+$colour-fills-neutral-20: #DCDCDD;
+$colour-fills-neutral-solid-10: #F6F6F6;
+$colour-fills-black-tint-10: rgba(0, 0, 0, 0.1);
+$colour-fills-midnightBlue-solid-10: #E7E8EB;
+
+
+
+
+// BACKGROUND COLOUR
+body {
+  background-color: $colour-charcoal default;
+}
+
+$colors: purple $colour-purple,
+          purple-80 $colour-purple-80,
+          purple-60 $colour-purple-60,
+          charcoal $colour-charcoal,
+          lemon $colour-lemon,
+          white $colour-white;
+
+
+@each $class, $color in $colors{
+
+  .pattern-#{$class} svg path{
+    fill: $color;
+  }
+  .circle-#{$class}{
+    border: 1px solid $color;
+  }
+
+  .bg-#{$class} {
+    background-color: $color !important;
+  }
+
+
+
+  // FONT COLOUR
+  .text-#{$class}{
+    color: $color;
+  }
+
+
+  // BORDER COLOUR
+  .border-#{$class}{
+    border: 1px solid #{$color};
+  }
+
+}
+
+
+
+
+
+
+

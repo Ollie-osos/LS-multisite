@@ -1,0 +1,271 @@
+@use "mixins";
+
+$none: 0;
+$xs: 10px;
+$sm: 30px;
+$md: 60px;
+$l: 90px;
+$xl: 120px;
+$xxl: 180px;
+
+//--- DEALING WITH SPACE ---//
+@mixin space($v, $attr, $dir) {
+  display: block;
+  @if ($dir == "all") {
+    #{$attr}-right: $v;
+    #{$attr}-left: $v;
+    #{$attr}-top: $v;
+    #{$attr}-bottom: $v;
+  } @else {
+    @if ($dir == "x") {
+      #{$attr}-left: $v;
+      #{$attr}-right: $v;
+    } @else if($dir == "y") {
+      #{$attr}-top: $v;
+      #{$attr}-bottom: $v;
+    } @else {
+      #{$attr}-#{$dir}: $v;
+    }
+  }
+}
+
+$direction: top, bottom, left, right, x, y;
+$rules: padding, margin;
+$size: 10px, 30px, 60px, 90px, 120px, 190px, auto, 0;
+
+//--- PADDINGS & MARGINS ----------------------
+@each $rule in $rules {
+  .#{$rule} {
+    &-180 {
+      @include space($xxl, $rule, "all");
+    }
+    &-120 {
+      @include space($xl, $rule, "all");
+    }
+    &-90 {
+      @include space($l, $rule, "all");
+    }
+    &-60 {
+      @include space($md, $rule, "all");
+    }
+    &-30 {
+      @include space($sm, $rule, "all");
+    }
+    &-10 {
+      @include space($xs, $rule, "all");
+    }
+    &-0 {
+      @include space(0px, $rule, "all");
+    }
+    &-auto {
+      @include space(auto, $rule, "all");
+    }
+
+    @each $dir in $direction {
+      &-#{$dir}-auto {
+        @include space(auto, $rule, $dir);
+      }
+      &-#{$dir}-0 {
+        @include space(0px, $rule, $dir);
+      }
+      &-#{$dir}-10 {
+        @include space($xs, $rule, $dir);
+      }
+      &-#{$dir}-30 {
+        @include space($sm, $rule, $dir);
+      }
+      &-#{$dir}-60 {
+        @include space($md, $rule, $dir);
+      }
+      &-#{$dir}-90 {
+        @include space($l, $rule, $dir);
+        @include mixins.devices(mobile) {
+          @include space($sm, $rule, $dir);
+        }
+      }
+      &-#{$dir}-120 {
+        @include space($xl, $rule, $dir);
+        @include mixins.devices(mobile) {
+          @include space($md, $rule, $dir);
+        }
+      }
+      &-#{$dir}-180 {
+        @include space($xxl, $rule, $dir);
+        @include mixins.devices(mobile) {
+          @include space($l, $rule, $dir);
+        }
+      }
+
+      //--- TABLET VIEW -------------
+      @include mixins.devices(largeTablet) {
+        &-md {
+          &-180 {
+            @include space($xxl, $rule, "all");
+          }
+          &-120 {
+            @include space($xl, $rule, "all");
+          }
+          &-90 {
+            @include space($l, $rule, "all");
+          }
+          &-60 {
+            @include space($md, $rule, "all");
+          }
+          &-30 {
+            @include space($sm, $rule, "all");
+          }
+          &-10 {
+            @include space($xs, $rule, "all");
+          }
+          &-0 {
+            @include space(0px, $rule, "all");
+          }
+          &-auto {
+            @include space(auto, $rule, "all");
+          }
+
+          @each $dir in $direction {
+            &-#{$dir}-auto {
+              @include space(auto, $rule, $dir);
+            }
+            &-#{$dir}-0 {
+              @include space(0px, $rule, $dir);
+            }
+            &-#{$dir}-10 {
+              @include space($xs, $rule, $dir);
+            }
+            &-#{$dir}-30 {
+              @include space($sm, $rule, $dir);
+            }
+            &-#{$dir}-60 {
+              @include space($md, $rule, $dir);
+            }
+            &-#{$dir}-90 {
+              @include space($l, $rule, $dir);
+            }
+            &-#{$dir}-120 {
+              @include space($xl, $rule, $dir);
+            }
+            &-#{$dir}-180 {
+              @include space($xxl, $rule, $dir);
+            }
+          }
+        }
+      }
+
+      //--- TABLET VIEW -------------
+      @include mixins.devices(tablet) {
+        &-sm {
+          &-180 {
+            @include space($md, $rule, "all");
+          }
+          &-120 {
+            @include space($xl, $rule, "all");
+          }
+          &-90 {
+            @include space($l, $rule, "all");
+          }
+          &-60 {
+            @include space($md, $rule, "all");
+          }
+          &-30 {
+            @include space($sm, $rule, "all");
+          }
+          &-10 {
+            @include space($xs, $rule, "all");
+          }
+          &-0 {
+            @include space(0px, $rule, "all");
+          }
+          &-auto {
+            @include space(auto, $rule, "all");
+          }
+
+          @each $dir in $direction {
+            &-#{$dir}-auto {
+              @include space(auto, $rule, $dir);
+            }
+            &-#{$dir}-0 {
+              @include space(0px, $rule, $dir);
+            }
+            &-#{$dir}-10 {
+              @include space($xs, $rule, $dir);
+            }
+            &-#{$dir}-30 {
+              @include space($sm, $rule, $dir);
+            }
+            &-#{$dir}-60 {
+              @include space($md, $rule, $dir);
+            }
+            &-#{$dir}-90 {
+              @include space($l, $rule, $dir);
+            }
+            &-#{$dir}-120 {
+              @include space($xl, $rule, $dir);
+            }
+            &-#{$dir}-180 {
+              @include space($xxl, $rule, $dir);
+            }
+          }
+        }
+      }
+
+      //--- MOBILE VIEW -------------
+      @include mixins.devices(mobile) {
+        &-xs {
+          &-180 {
+            @include space($xxl, $rule, "all");
+          }
+          &-120 {
+            @include space($xl, $rule, "all");
+          }
+          &-90 {
+            @include space($l, $rule, "all");
+          }
+          &-60 {
+            @include space($md, $rule, "all");
+          }
+          &-30 {
+            @include space($sm, $rule, "all");
+          }
+          &-10 {
+            @include space($xs, $rule, "all");
+          }
+          &-0 {
+            @include space(0px, $rule, "all");
+          }
+          &-auto {
+            @include space(auto, $rule, "all");
+          }
+
+          @each $dir in $direction {
+            &-#{$dir}-auto {
+              @include space(auto, $rule, $dir);
+            }
+            &-#{$dir}-0 {
+              @include space(0px, $rule, $dir);
+            }
+            &-#{$dir}-10 {
+              @include space($xs, $rule, $dir);
+            }
+            &-#{$dir}-30 {
+              @include space($sm, $rule, $dir);
+            }
+            &-#{$dir}-60 {
+              @include space($md, $rule, $dir);
+            }
+            &-#{$dir}-90 {
+              @include space($l, $rule, $dir);
+            }
+            &-#{$dir}-120 {
+              @include space($xl, $rule, $dir);
+            }
+            &-#{$dir}-180 {
+              @include space($xxl, $rule, $dir);
+            }
+          }
+        }
+      }
+    }
+  }
+}

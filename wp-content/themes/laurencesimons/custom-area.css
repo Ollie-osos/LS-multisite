@@ -1,0 +1,112 @@
+/* Elements .scss did not compile correctly (or did buthad no effects) */
+
+
+/* iOS specifics. To get the rounded effect, you need this webkit below.
+Concerning the arrow from the menu, you have to add \FE0E to ensure iOS compatibility */
+
+.carousel-body {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+}
+.menu-item-has-children > a:after {
+    content: "\25B6 \FE0E" !important;
+}
+
+.menu-item-has-children.open > a:after {
+    content: "\25BC \FE0E" !important;
+}
+
+
+
+/* Not effective in .scss */
+@media (min-width:482px) {
+    .is-block-mobile-only {
+        display:none !important;
+    }
+}
+
+
+@media only screen and (max-width: 481px) {
+
+    /* Instead of changing the class everywhere, I just changed it's value. The .scss didn't want it */
+    .padding-y-180:not(:first-of-type) {
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+    }
+    .widget-double-card {
+        padding-bottom: 60px!important;
+    }
+    .padding-top-180 {
+        padding-top: 30px;
+    }
+
+    /* Styles for the employee contact info */
+    .employee-contact {
+        flex-direction: column;
+    }
+    .employee-contact a {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .employee-contact a ion-icon {
+        margin-right:5px;
+    }
+
+
+
+    /* The original "overflow hidden" didn't work on iOS */
+    html, body {
+        width:100% !important;
+        position: relative !important;
+    }
+    .animation-2-circles, .block-animation, .no-animation-3-circles {
+        z-index: -1 !important;
+        width: 100% !important;
+        position: relative !important;
+        overflow-x: hidden !important;
+        margin: 0 !important;
+        overflow-y: hidden !important;
+    }
+
+
+
+    /* Elements without effect in the .scss */
+    .img-main-logo {
+        width: 100%;
+    }
+    .img-logo {
+        width: 50%;
+    }
+    .img-container img {
+        height: 100%;
+        width: auto;
+    }
+    .img-landscape {
+        height: auto !important;
+    }
+    .img-landscape img {
+        border-radius: 1.5em;
+    }
+    .widget-double-card .img-landscape, .widget-double-card .img-landscape img {
+        border-radius: 1.5em 1.5em 0 0;
+    }
+    .is-block-desktop-only {
+        display:none !important;
+    }
+    .wpcf7-form-control {
+        width:100%;
+    }
+    input[type="submit"] {
+        width: auto;
+    }
+    .content.bg-lemon {
+        bottom: 0 !important;
+    }
+    #page-1212 .columns.is-flex.is-flex-wrap-wrap.is-justify-content-space-around.two-text-block {
+        flex-direction:column-reverse !important;
+    }
+}
+  

@@ -1,0 +1,75 @@
+/*
+Theme Name: Laurence Simons
+Text Domain: laurencesimons
+Version: 1.0
+Tested up to: 6.0
+Requires at least: 4.7
+Requires PHP: 5.2.4
+Description: A dark theme representing Laurence Simons
+Tags: ACF-custom, one-column, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images,  full-width-template, block-patterns, block-styles, wide-blocks, accessibility-ready
+
+Author: Aurora Agency
+
+with others.
+*/
+
+
+
+/* -------------------------------------------------------------------------- */
+
+/*	0. CSS Reset
+/* -------------------------------------------------------------------------- */
+
+
+html,
+body {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+address,
+big,
+cite,
+code,
+em,
+font,
+img,
+small,
+strike,
+sub,
+sup,
+li,
+ol,
+ul,
+fieldset,
+form,
+label,
+legend,
+button,
+table,
+caption,
+tr,
+th,
+td {
+  border: none;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+  text-align: inherit;
+}
+
+blockquote::before,
+blockquote::after {
+  content: "";
+}
+

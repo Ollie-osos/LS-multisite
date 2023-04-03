@@ -1,0 +1,335 @@
+@use "mixins";
+@use "colors";
+
+$text: 1.15rem;
+$title: 5.25rem;
+
+// FONT MAINLY USED FOR TITLES
+@font-face {
+  font-family: "Larken";
+  src: url(assets/fonts/Larken-Thin.ttf) format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Larken";
+  src: url(assets/fonts/Larken-Regular.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Larken";
+  src: url(assets/fonts/Larken-Medium.ttf) format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Larken";
+  src: url(assets/fonts/Larken-Bold.ttf) format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Larken";
+  src: url(assets/fonts/Larken-Black.ttf) format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+// FONT USED FOR THE REST OF THE WEB PAGE SUCH AS TEXT, BUTTONS, ETC...
+@font-face {
+  font-family: "Area Trial";
+  src: url(assets/fonts/AreaTrial-LightInktrap.otf) format("openType");
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Area Trial";
+  src: url(assets/fonts/AreaTrial-MediumInktrap.otf) format("openType");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Area Trial";
+  src: url(assets/fonts/AreaTrial-BoldInktrap.otf) format("openType");
+  font-weight: 700;
+  font-style: normal;
+}
+
+//--- HANDLING FONT STYLE ---//
+@mixin font-ppt($weight, $serif, $family...) {
+  font-family: $family, $serif;
+  font-style: normal;
+  font-weight: $weight;
+  margin: 0;
+}
+
+@mixin font-size($size, $line-height) {
+  font-size: $size;
+  line-height: $line-height;
+  margin: 0;
+}
+
+textarea,
+html,
+body,
+li,
+td,
+span,
+a,
+button,
+p {
+  @include font-ppt(300, sans-serif, "Area Trial", "Roboto", "Arial");
+  @include font-size($text, calc(#{$text} + 0.5rem));
+}
+
+select {
+  @include font-size($text, calc(#{$text} * 0.5rem));
+}
+
+@include mixins.devices(mobile) {
+  select,
+  html,
+  body,
+  li,
+  td,
+  span,
+  a,
+  button,
+  p {
+    @include font-size(calc(#{$text} - 0.1rem), calc(#{$text} + 0.4rem));
+  }
+}
+
+.h1,
+.h2,
+h1,
+h1 span,
+h2,
+h2 span,
+h3,
+h3 span,
+h4,
+h4 span,
+h5,
+h5 span {
+  @include font-ppt(400, serif, "Larken", "Times New Roman", "Times");
+}
+
+.h1,
+h1,
+h1 span {
+  @include font-size(calc(#{$title} - 1.25rem), calc(#{$title} - 0.5rem));
+  letter-spacing: -0.02em;
+}
+
+.h2,
+h2,
+h2 span {
+  @include font-size(calc(#{$title} / 2.4), calc((#{$title} / 1.8) - 0.5rem));
+  letter-spacing: -0.02em;
+}
+
+h3,
+h3 span {
+  @include font-size(calc(#{$title} / 3.7), calc((#{$title} / 2.2) - 0.5rem));
+}
+
+h4,
+h4 span {
+  @include font-size(calc(#{$title} / 4), calc((#{$title} / 2.7) - 0.5rem));
+}
+
+h5,
+h5 span {
+  @include font-size(calc(#{$title} / 5), calc((#{$title} / 3) - 0.5rem));
+}
+
+@include mixins.devices(mobile) {
+  h1,
+  h1 span {
+    @include font-size(calc(#{$title} - 2rem), calc(#{$title} - 2.5rem));
+  }
+  .h1,
+  .h1 span {
+    @include font-size(calc(#{$title} - 2rem), calc(#{$title} - 2.5rem));
+  }
+
+  h2,
+  h2 span {
+    @include font-size(calc(#{$title} / 3), calc((#{$title} / 2) - 0.5rem));
+  }
+
+  .h2,
+  .h2 span {
+    @include font-size(calc(#{$title} / 3), calc((#{$title} / 2) - 0.5rem));
+  }
+
+  h3,
+  h3 span {
+    @include font-size(calc(#{$title} / 4), calc((#{$title} / 2.3) - 0.5rem));
+  }
+
+  h4,
+  h4 span {
+    @include font-size(calc(#{$title} / 5), calc((#{$title} / 4) - 0.5rem));
+  }
+
+  h5,
+  h5 span {
+    @include font-size(calc(#{$title} / 6), calc((#{$title} / 5) - 0.5rem));
+  }
+}
+
+.subtext {
+  @include font-size(calc(#{$title} / 5), calc((#{$title} / 3) - 0.5rem));
+}
+
+.small,
+.tags,
+small {
+  @include font-size(calc(#{$text} / 1.7), calc((#{$text} / 0.7) - 0.5rem));
+  letter-spacing: 0.05em;
+}
+
+.tags {
+  &:not(footer .tags) {
+    text-transform: uppercase;
+  }
+}
+small {
+  &:not(footer small) {
+    text-transform: uppercase;
+  }
+}
+
+textarea,
+input,
+.button,
+a.button,
+button.button,
+.input {
+  @include font-size(calc(#{$text} / 1.2), calc((#{$text} / 1.2) - 0.5rem));
+}
+
+input#search-form-1,
+#search_form .input {
+  font-size: 35px !important;
+}
+
+select {
+  @include font-size(calc(#{$text} / 1.2), #{$text});
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+.list-unstyled {
+  list-style: none;
+}
+
+a,
+.no-underline {
+  text-decoration: none;
+}
+
+.breadcrumb {
+  li,
+  a {
+    @include font-size(calc(#{$text} / 1.2), calc((#{$text} / 0.7) - 0.5rem));
+  }
+}
+
+footer {
+  a,
+  p,
+  li,
+  span {
+    text-transform: none;
+    @include font-size(calc(#{$text} / 1.2), calc((#{$text} / 0.7) - 0.5rem));
+  }
+
+  small {
+    text-transform: none;
+    @include font-size(calc(#{$text} / 1.5), calc((#{$text} / 0.5) - 0.5rem));
+  }
+
+  .text-link,
+  .select-body-title a {
+    @include font-size($text, calc(#{$text} + 0.5rem));
+  }
+
+  a:hover,
+  a {
+    text-decoration: underline;
+  }
+
+  .has-icon {
+    @include font-size(#{$text}, calc(#{$text} - 0.5rem));
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.madeBy * {
+  @include font-size(calc(#{$text} / 1.7), calc((#{$text} / 0.7) - 0.5rem));
+  letter-spacing: 0.05em;
+}
+
+.list-unstyled {
+  text-decoration: none;
+}
+
+.overlay li a,
+.overlay .main-item a,
+.overlay .navbar-item a {
+  font-family: "Larken", "Times New Roman", "Times", serif !important;
+  display: block;
+  font-size: calc(5.25rem / 1.4);
+  line-height: 3.14166666668rem;
+  width: 100%;
+  padding: 0 30px 10px 30px;
+  letter-spacing: -0.02em;
+
+  @include mixins.devices(tablet) {
+    font-size: calc(2.25rem / 1.4);
+    line-height: 1.4rem;
+    width: 100%;
+    padding: 0 10px 10px 10px;
+  }
+}
+
+.widget-quote {
+  .h2 {
+    @include font-size(calc(#{$title} / 2), calc((#{$title} / 1.4) - 0.5rem));
+    letter-spacing: -0.02em;
+  }
+}
+
+.lemon-text {
+  color: #f0f050;
+}
+
+.card-xxs{
+  @include mixins.devices(mobile) {
+    h4 {
+      @include font-size(calc(#{$title} / 3.7), calc((#{$title} / 2.2) - 0.5rem));
+    }
+
+    .small {
+      @include font-size($text, calc(#{$text} + 0.5rem));
+      letter-spacing: 0;
+    }
+  }
+}

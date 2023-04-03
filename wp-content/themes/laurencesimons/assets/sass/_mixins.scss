@@ -1,0 +1,179 @@
+
+
+
+// TRANSITION ----------------------
+$effect: ease-out;
+$time: 4ms;
+
+
+@mixin transition ($property...) {
+  @each $ppt in $property {
+    $ppt: $ppt + 4ms ease-out + ',';
+  }
+
+  -webkit-transition: $property;
+  -moz-transition: $property;
+  -o-transition: $property;
+  transition: $property;
+}
+
+// PATTERN ----------------------
+$directions: top, right, left, bottom, left-bottom, right-bottom, top-left, top-right;
+@mixin pattern ($size, $dir) {
+  @each $dir in $directions {
+    .-#{$dir}{
+      @if($dir == 'top') {
+        top: 90px;
+        left: -90px;
+      }@else if($dir == 'top-right'){
+        top: -30px;
+        left: 180px;
+      }@else if($dir == 'top-left'){
+        top: -30px;
+        left: -30px;
+      }@else if($dir == 'bottom-right'){
+        top: 180px;
+        left: 180px;
+      }@else if($dir == 'bottom-left'){
+        top: 180px;
+        left: -30px;
+      }@else if($dir == 'bottom'){
+        top: 180px;
+        left: -90px;
+      }
+    }
+  }
+}
+
+
+
+
+
+// IMAGES ----------------------
+@mixin bg-image ($property1) {
+  -webkit-background-image: url($property1);
+  -moz-background-image: url($property1);
+  -o-background-image: url($property1);
+  background-image: url($property1);
+}
+
+@mixin full-height() {
+  @include devices(mobile) {
+    height:100%;
+    width: auto;
+  }
+}
+
+@mixin img-size($size, $type, $radius: 0) {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+    @if ($type == 'landscape') {
+      width: 100%;
+      max-width: $size;
+      height: calc(#{$size} - (#{$size} / 2));
+    }
+    @else if ($type == 'portrait') {
+      width: calc(#{$size} - (#{$size} / 3));
+      height: 100%;
+      max-height: $size;
+    }
+    @else if ($type == 'container') {
+      width: 100%;
+      height: 100%;
+    }
+    @else if ($type == 'logo') {
+      width: 100%;
+      @include devices(mobile) {
+        width: 50%;
+      }
+      max-width: $size;
+      height: auto;
+    }@else{
+      width: $size;
+      max-width: $size;
+      height: $size;
+      max-height: $size;
+      @include transition(width, height, max-width, max-height);
+
+      //--- TABLET VIEW -------------
+      @include devices(tablet) {
+        width: 300px;
+        max-width: 300px;
+        height:  300px;
+        max-height: 300px;
+        @include transition(width, height, max-width, max-height);
+      }
+
+      //--- MOBILE VIEW -------------
+      @include devices(mobile) {
+        width: 200px;
+        max-width: 200px;
+        height:  200px;
+        max-height: 200px;
+        @include transition(width, height, max-width, max-height);
+      }
+    }
+
+
+
+  @if $radius != 0 {
+    @include border-radius($radius);
+  }
+}
+
+// BORDERS ----------------------
+@mixin border-radius ($r) {
+  -webkit-border-radius:  $r;
+  -moz-border-radius: $r;
+  border-radius: $r;
+}
+
+
+// WIDTHS ----------------------
+@mixin size ($s) {
+  width:  $s;
+  height: $s;
+}
+@mixin width ($w-min, $w-max) {
+  width:  100%;
+  max-width:  $w-max;
+  min-width:  $w-min;
+}
+
+@mixin height ($h-min, $h-max) {
+  height:  100%;
+  max-height:  $h-max;
+  min-height:  $h-min;
+}
+
+
+
+// DEVICES ----------------------
+@mixin devices ($breakpoint) { //the name of the mixin is devices
+  @if $breakpoint == desktop {
+    @media only screen and (max-width: 1249px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == largeTablet {
+    @media only screen and (max-width: 994px) {
+      @content;
+    }
+  }
+  @if $breakpoint == tablet {
+    @media only screen and (max-width: 780px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == mobile {
+    @media only screen and (max-width: 481px) {
+      @content;
+    }
+  }
+}
