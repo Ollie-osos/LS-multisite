@@ -19,24 +19,24 @@ $menu_logo_option = get_field('menu_logo_option', 'option');
 $header_logo;
 $menu_logo;
 
-if($header_logo_option == 'white'){
+if ($header_logo_option == 'white') {
     $header_logo = $white_logo;
-}else{
+} else {
     $header_logo = $black_logo;
 }
 
-if($menu_logo_option == 'white'){
+if ($menu_logo_option == 'white') {
     $menu_logo = $white_logo;
-}else{
+} else {
     $menu_logo = $black_logo;
 }
 
-extract($args); 
-$header_var; 
+extract($args);
+$header_var;
 
-if($header_var == 'black'){
+if ($header_var == 'black') {
     $header_logo = $black_logo;
-}else{
+} else {
     $header_logo = $white_logo;
 }
 
@@ -70,18 +70,36 @@ if($header_var == 'black'){
         <nav class="navbar is-flex is-justify-content-space-between is-align-items-center" aria-label="main navigation">
 
             <div id="navbar-brand" class="navbar-brand">
-                    <?php if ( $header_logo ) : ?>
-                        <a class="img-main-logo" href="/">
-                            <img id="navbar-logo" src="<?php echo $header_logo['sizes']['large']; ?>" alt="<?php echo $header_logo['title']; ?>">
-                        </a>
-                    <?php endif; ?>
+                <?php if ($header_logo) : ?>
+                    <a class="img-main-logo" href="/">
+                        <img id="navbar-logo" src="<?php echo $header_logo['sizes']['large']; ?>" alt="<?php echo $header_logo['title']; ?>">
+                    </a>
+                <?php endif; ?>
             </div>
 
             <div class="navbar-end is-flex is-align-items-center">
+                <!-- language selector -->
+                <div class="navbar-item is-block" width="150px">
+                    <div class="is-flex">
+                        <img src="<?php echo get_template_directory_uri() ?>/assets/images/map.svg" alt="map icon">
+                        <select id="select-menu" 
+                        style="
+                            background-color: #2B2B2B;
+                            color: #F0F050;
+                            box-shadow: transparent;
+                            border-radius: 20px;
+                            -webkit-appearance: none;
+                            padding: 9px 12px;">
+                            <option selected value="#">English</option>
+                            <option value="https://laurencesimons.de">Deutsch</option>
+                        </select>
+                    </div>
+
+                </div>
                 <?php // Check whether the header search is activated in the customizer.
                 $enable_header_contactCTA = get_theme_mod('enable_header_contact_CTA', true);
                 if (true === $enable_header_contactCTA) {
-                    ?>
+                ?>
                     <div class="navbar-item is-block-desktop-only">
                         <a id="btn-contact" href="/contact-us" class="button is-primary">Contact us</a>
                     </div>
@@ -93,16 +111,19 @@ if($header_var == 'black'){
                 <?php // Check whether the header search is activated in the customizer.
                 $enable_header_search = get_theme_mod('enable_header_search', true);
                 if (true === $enable_header_search) {
-                    ?>
+                ?>
                     <div class="navbar-item">
                         <a id="btn-toggleSearch" href="javascript:void(0)" class="button has-icon is-secondary" data-target="search-overlay" aria-label="menu" aria-expanded="false">
                             <ion-icon name="search-outline"></ion-icon>
                         </a>
                     </div>
-                    <?php get_template_part('template-parts/overlay-search', null,
+                    <?php get_template_part(
+                        'template-parts/overlay-search',
+                        null,
                         array(
                             'menu_logo' => $menu_logo['sizes']['large'],
-                            'header_logo' => $header_logo['sizes']['large'])
+                            'header_logo' => $header_logo['sizes']['large']
+                        )
                     ); ?>
                 <?php } ?>
 
@@ -111,17 +132,20 @@ if($header_var == 'black'){
                 <?php // Check whether the header search is activated in the customizer.
                 $enable_header_nav = get_theme_mod('enable_header_navigation', true);
                 if (true === $enable_header_nav) {
-                    ?>
+                ?>
                     <div class="navbar-item">
                         <a id="btn-toggleNav" href="javascript:void(0)" class="button has-icon is-secondary" data-target="nav-overlay" aria-label="menu" aria-expanded="false">
                             <ion-icon name="menu-outline"></ion-icon>
                         </a>
                     </div>
 
-                    <?php get_template_part('template-parts/overlay-menu', null,
+                    <?php get_template_part(
+                        'template-parts/overlay-menu',
+                        null,
                         array(
                             'menu_logo' => $menu_logo['sizes']['large'],
-                            'header_logo' => $header_logo['sizes']['large'])
+                            'header_logo' => $header_logo['sizes']['large']
+                        )
                     ); ?>
 
                 <?php } ?>
@@ -138,6 +162,15 @@ if($header_var == 'black'){
                     $(this).toggleClass('open');
                     $(".sub-menu", this).slideToggle();
                 });
+                const selectMenu = document.getElementById('select-menu');
+
+                selectMenu.addEventListener('change', (event) => {
+                    const url = event.target.value;
+                    if (url) {
+                        window.location.href = url;
+                    }
+                });
+
             });
         })(jQuery);
     </script>
