@@ -82,14 +82,7 @@ if ($header_var == 'black') {
                 <div class="navbar-item is-block" width="150px">
                     <div class="is-flex">
                         <img src="<?php echo get_template_directory_uri() ?>/assets/images/map.svg" alt="map icon">
-                        <select id="select-menu" 
-                        style="
-                            background-color: #2B2B2B;
-                            color: #F0F050;
-                            box-shadow: transparent;
-                            border-radius: 20px;
-                            -webkit-appearance: none;
-                            padding: 9px 12px;">
+                        <select id="select-menu">
                             <option selected value="#">English</option>
                             <option value="https://laurencesimons.de">Deutsch</option>
                         </select>

@@ -11194,9 +11194,11 @@ html {
 }
 .block-animation iframe {
   width: 100%;
-  height: 56.25vw; /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
+  height: 56.25vw;
+  /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
   min-height: 100vh;
-  min-width: 177.77vh; /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
+  min-width: 177.77vh;
+  /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
   position: absolute;
   top: 50%;
   left: 50%;
@@ -11233,9 +11235,11 @@ html {
   }
   .block-animation iframe {
     width: 100%;
-    height: 56.25vw; /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
+    height: 56.25vw;
+    /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
     min-height: 90vh;
-    min-width: 90vh; /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
+    min-width: 90vh;
+    /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
     position: absolute;
     top: 50%;
     left: 50%;
@@ -11921,6 +11925,14 @@ header {
   display: block;
   padding-left: 10px;
 }
+.navbar #select-menu {
+  background-color: #2B2B2B;
+  color: #F0F050;
+  box-shadow: transparent;
+  border-radius: 20px;
+  -webkit-appearance: none;
+  padding: 9px 12px;
+}
 .navbar .overlay {
   position: fixed;
   display: none;
@@ -11929,7 +11941,8 @@ header {
   z-index: -1;
   padding-top: 160px;
   background-color: #F0F050;
-  overflow-x: hidden; /* Disable horizontal scroll */
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
   overflow-y: auto;
   width: 100%;
   height: 100%;
@@ -13065,7 +13078,10 @@ footer .madeBy a:hover {
   line-height: 18px;
 }
 
-.bg-white p, .bg-white body, .bg-white a, .bg-white h3 {
+.bg-white p,
+.bg-white body,
+.bg-white a,
+.bg-white h3 {
   color: #2B2B2B;
 }
 
@@ -13139,7 +13155,8 @@ footer .madeBy a:hover {
 .iwd-form {
   padding-bottom: 50px;
 }
-.iwd-form input[type=radio], .iwd-form input[type=checkbox] {
+.iwd-form input[type=radio],
+.iwd-form input[type=checkbox] {
   opacity: 0;
   display: inline-block;
 }
