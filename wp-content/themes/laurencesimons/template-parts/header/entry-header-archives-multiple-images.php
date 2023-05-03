@@ -20,7 +20,7 @@ $color = $header['background_circles_color'];
 ?>
 
 
-<div class="padding-y-180 padding-md-top-120 padding-x-120 padding-md-x-30 padding-xs-x-10 widget-intro bg-charcoal block-animation tablet-heigh-xl"><!-- Need .bg-circles-purple-60 to be editable -->
+<div class="padding-y-180 padding-md-top-120 padding-sm-top-180 padding-x-120 padding-md-x-30 padding-xs-x-10 widget-intro bg-charcoal block-animation tablet-heigh-xl"><!-- Need .bg-circles-purple-60 to be editable -->
     <div class="columns block-content">
 
         <div class="column is-two-thirds">

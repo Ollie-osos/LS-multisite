@@ -79,7 +79,7 @@ if ($header_var == 'black') {
 
             <div class="navbar-end is-flex is-align-items-center">
                 <!-- language selector -->
-                <div class="navbar-item is-block" width="150px">
+                <div class="navbar-item is-block" id="change-language">
                     <div class="is-flex">
                         <!-- <img src="<?php //echo get_template_directory_uri() ?>/assets/images/map.svg" alt="map icon"> -->
                         <div class="select-menu-wrapper">

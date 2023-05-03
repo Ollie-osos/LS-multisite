@@ -21,7 +21,7 @@ function add_this_script()
 get_header( null, [ 'header_var' => 'black' ] );
 ?>
 
-<div class="padding-y-180 padding-md-top-120 padding-x-120 padding-md-x-30 padding-xs-x-10 widget-intro bg-white bg-image" style="background-image: url('<?php echo get_template_directory_uri() ?>/assets/images/LS_IWD_header_image.jpg">
+<div class="padding-y-180 padding-md-top-120 padding-sm-top-180 padding-sm-top-180 padding-x-120 padding-md-x-30 padding-xs-x-10 widget-intro bg-white bg-image" style="background-image: url('<?php echo get_template_directory_uri() ?>/assets/images/LS_IWD_header_image.jpg">
 
 </div><!-- .widget-hero-intro -->
 

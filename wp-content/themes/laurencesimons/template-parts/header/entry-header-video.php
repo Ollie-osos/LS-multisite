@@ -28,7 +28,7 @@ if($cta_animation){
 ?>
 
 
-<div class="padding-y-180 padding-md-top-120 padding-md-x-30 padding-xs-x-10 widget-intro bg-charcoal block-animation height-620">
+<div class="padding-y-180 padding-md-top-120 padding-sm-top-180 padding-md-x-30 padding-xs-x-10 widget-intro bg-charcoal block-animation height-620">
     <?php if($link): ?>
     <div class="img-container">
         <?php echo $link; ?>

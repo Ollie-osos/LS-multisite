@@ -647,6 +647,9 @@ a {
 header {
   z-index: 10;
   margin-bottom: -140px;
+  @include mixins.devices(mobile) {
+    margin-bottom: -85px;
+  }
 }
 
 .navbar {
@@ -1932,4 +1935,19 @@ $card-margins: 30px;
       right: 0;
     }
   }
+}
+
+// language changer 
+
+#change-language{
+  width: 150px;
+  @include mixins.devices(mobile) {
+    position: absolute;
+    top: 89px;
+    right: 10px;
+    .is-flex{
+      justify-content: flex-end;
+    }
+  }
+  
 }

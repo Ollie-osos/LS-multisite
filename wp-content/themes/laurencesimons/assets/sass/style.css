@@ -11890,6 +11890,11 @@ header {
   z-index: 10;
   margin-bottom: -140px;
 }
+@media only screen and (max-width: 481px) {
+  header {
+    margin-bottom: -85px;
+  }
+}
 
 .navbar {
   display: block;
@@ -13221,6 +13226,20 @@ footer .madeBy a:hover {
 @media only screen and (max-width: 780px) {
   .iwd-questions .page-count {
     right: 0;
+  }
+}
+
+#change-language {
+  width: 150px;
+}
+@media only screen and (max-width: 481px) {
+  #change-language {
+    position: absolute;
+    top: 89px;
+    right: 10px;
+  }
+  #change-language .is-flex {
+    justify-content: flex-end;
   }
 }
 

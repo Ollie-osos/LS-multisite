@@ -14,7 +14,7 @@ get_header();
 
     <!-- ONE PAGE BODY -->
     <section class="container">
-        <div class="padding-y-180 padding-md-top-120 padding-x-120 padding-md-x-30 padding-xs-x-10 widget-intro bg-charcoal block-animation">
+        <div class="padding-y-180 padding-md-top-120 padding-sm-top-180 padding-x-120 padding-md-x-30 padding-xs-x-10 widget-intro bg-charcoal block-animation">
             <div class="img-container">
                 <iframe src="https://player.vimeo.com/video/724796716?h=d96129c9cf&?api=1&background=1&autoplay=1&loop=1&muted=1" width="640" height="360" frameborder="0" allow="autoplay; loop; fullscreen; picture-in-picture" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
             </div>
