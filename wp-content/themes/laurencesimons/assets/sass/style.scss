@@ -647,9 +647,6 @@ a {
 header {
   z-index: 10;
   margin-bottom: -140px;
-  @include mixins.devices(mobile) {
-    margin-bottom: -85px;
-  }
 }
 
 .navbar {
