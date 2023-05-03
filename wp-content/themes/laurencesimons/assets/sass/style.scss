@@ -670,13 +670,27 @@ header {
     @include spacing.space(10px, "padding", "left");
   }
 
+  .select-menu-wrapper{
+    position: relative;
+    &:after{
+      content: url(assets/images/map.svg);
+      width: 24px;
+      height: 23px;
+      display: inline-block;
+      position: absolute;
+      right: 5px;
+      top: 9px;
+    }
+  }
   #select-menu {
     background-color: colors.$colour-charcoal;
     color: colors.$colour-lemon;
     box-shadow: transparent;
     border-radius: 20px;
     -webkit-appearance: none;
-    padding: 9px 12px;
+    padding: 9px 30px 9px 12px;
+    font-family: "Area Trial", "Roboto", "Arial", sans-serif;
+    cursor: pointer;
   }
 
   .overlay {

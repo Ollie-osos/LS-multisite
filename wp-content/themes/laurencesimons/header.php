@@ -81,11 +81,13 @@ if ($header_var == 'black') {
                 <!-- language selector -->
                 <div class="navbar-item is-block" width="150px">
                     <div class="is-flex">
-                        <img src="<?php echo get_template_directory_uri() ?>/assets/images/map.svg" alt="map icon">
-                        <select id="select-menu">
-                            <option selected value="#">English</option>
-                            <option value="https://laurencesimons.de">Deutsch</option>
-                        </select>
+                        <!-- <img src="<?php //echo get_template_directory_uri() ?>/assets/images/map.svg" alt="map icon"> -->
+                        <div class="select-menu-wrapper">
+                            <select id="select-menu">
+                                <option value="https://laurencesimons.com">English</option>
+                                <option value="https://laurencesimons.de">German</option>
+                            </select>
+                        </div>
                     </div>
 
                 </div>

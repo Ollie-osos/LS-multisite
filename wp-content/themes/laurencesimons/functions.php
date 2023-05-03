@@ -1388,7 +1388,3 @@ function truncated($text, $excerpt_length) {
 
 
 ?>
-
-
-
-

@@ -11925,13 +11925,27 @@ header {
   display: block;
   padding-left: 10px;
 }
+.navbar .select-menu-wrapper {
+  position: relative;
+}
+.navbar .select-menu-wrapper:after {
+  content: url(assets/images/map.svg);
+  width: 24px;
+  height: 23px;
+  display: inline-block;
+  position: absolute;
+  right: 5px;
+  top: 9px;
+}
 .navbar #select-menu {
   background-color: #2B2B2B;
   color: #F0F050;
   box-shadow: transparent;
   border-radius: 20px;
   -webkit-appearance: none;
-  padding: 9px 12px;
+  padding: 9px 30px 9px 12px;
+  font-family: "Area Trial", "Roboto", "Arial", sans-serif;
+  cursor: pointer;
 }
 .navbar .overlay {
   position: fixed;
