@@ -21,6 +21,9 @@ $white_logo = get_field('white_logo', 'option');
 $black_logo = get_field('black_logo', 'option');
 $footer_logo_option = get_field('footer_logo_option', 'option');
 
+$footer_links_title = get_field('footer_links_title', 'option');
+$footer_mailing_title = get_field('footer_mailing_title', 'option');
+
 $footer_logo;
 if($footer_logo_option == 'white'){
     $footer_logo = $white_logo;
@@ -61,7 +64,7 @@ if($footer_logo_option == 'white'){
 
             <?php if($has_footer_menu): ?>
                 <div class="site-footer-links column is-3" aria-label="<?php esc_attr_e( 'Footer', 'lss' ); ?>">
-                    <h5>Quick links</h5>
+                    <h5><?php echo $footer_links_title; ?></h5>
                     <?php
                     wp_nav_menu(
                         array(
@@ -79,7 +82,7 @@ if($footer_logo_option == 'white'){
             <?php endif; ?>
 
             <div class="site-footer-mail column is-3" aria-label="">
-                <h5>Join our mailing list</h5>
+                <h5><?php echo $footer_mailing_title; ?></h5>
                 <p>Insights, events and opinions on the latest law, legislation and policies.</p>
                 <?php echo do_shortcode('[eshot-form id="1"]'); ?>
             </div>

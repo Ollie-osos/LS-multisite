@@ -94,6 +94,15 @@ if( function_exists('acf_add_options_page') ) {
         'icon_url'		=> false
     ));
 
+     acf_add_options_sub_page(array(
+        'page_title' 	=> 'Footer',
+        'menu_title'	=> 'Footer',
+        'menu_slug'	    => 'theme-footer',
+        'parent_slug'	=> 'global-settings',
+        'position'		=> false,
+        'redirect'		=> false,
+        'icon_url'		=> false
+    ));
 
     //    ARCHIVES SETTINGS ---------------
     acf_add_options_page(array(

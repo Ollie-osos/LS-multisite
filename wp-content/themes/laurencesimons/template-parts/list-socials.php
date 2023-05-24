@@ -2,12 +2,13 @@
 
 $socials = get_field('social_media', 'option');
 $display = get_field('display_social_list', 'option');
+$footer_social_title = get_field('footer_social_title', 'option');
 
 ?>
 
 <?php if($socials && $display == true): ?>
     <div class="site-footer-social column is-2" aria-label="Social links">
-        <h5>Socials</h5>
+        <h5><?php echo $footer_social_title; ?></h5>
 
         <div class="is-flex is-align-items-center">
             <?php foreach( $socials as $social ): ?>
