@@ -23,6 +23,7 @@ $footer_logo_option = get_field('footer_logo_option', 'option');
 
 $footer_links_title = get_field('footer_links_title', 'option');
 $footer_mailing_title = get_field('footer_mailing_title', 'option');
+$footer_mailing_copy = get_field('footer_mailing_copy', 'option');
 
 $footer_logo;
 if($footer_logo_option == 'white'){
@@ -83,7 +84,7 @@ if($footer_logo_option == 'white'){
 
             <div class="site-footer-mail column is-3" aria-label="">
                 <h5><?php echo $footer_mailing_title; ?></h5>
-                <p>Insights, events and opinions on the latest law, legislation and policies.</p>
+                <p><?php echo $footer_mailing_copy; ?></p>
                 <?php echo do_shortcode('[eshot-form id="1"]'); ?>
             </div>
             <script>

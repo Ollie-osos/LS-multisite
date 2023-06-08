@@ -716,7 +716,7 @@ function lss_register_styles(){
     $theme_version = wp_get_theme()->get( 'Version' );
 
     // Add CSS
-    wp_enqueue_style( 'lss-style', get_template_directory_uri() . '/style.css', array('lss-bulma'), '2.3.4.1', 'all' );
+    wp_enqueue_style( 'lss-style', get_template_directory_uri() . '/style.css', array('lss-bulma'), '2.3.4.2', 'all' );
 
     // Bulma library
     wp_enqueue_style( 'lss-bulma', get_template_directory_uri() . '/bulma.css', null, $theme_version, 'all' );
@@ -757,7 +757,7 @@ function lss_register_scripts() {
     wp_enqueue_script( 'lss-jquery', 'https://code.jquery.com/jquery-3.2.1.min.js', array(), $theme_version, true );
 
     //--- Google map ---//
-    wp_enqueue_script( 'lss-googlemap', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCukI9AGWDgMrD7POw2FoV1BRXd9htvgv4', array(), $theme_version ); // AIzaSyCukI9AGWDgMrD7POw2FoV1BRXd9htvgv4 // AIzaSyDaKCNJMHkTRujeBW7_XnclUfSpjf96Iv0
+    wp_enqueue_script( 'lss-googlemap', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCukI9AGWDgMrD7POw2FoV1BRXd9htvgv4&callback=initMap', array(), $theme_version ); // AIzaSyCukI9AGWDgMrD7POw2FoV1BRXd9htvgv4 // AIzaSyDaKCNJMHkTRujeBW7_XnclUfSpjf96Iv0
 
     //--- Glidster ---//
     // used for sliders and carousels

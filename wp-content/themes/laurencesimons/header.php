@@ -85,7 +85,7 @@ if ($header_var == 'black') {
                         <div class="select-menu-wrapper">
                             <select id="select-menu">
                                 <option value="#">English</option>
-                                <option value="https://de.multisite-laurencesimons.com/">Deutsch</option>
+                                <option value="https://laurencesimons.de">Deutsch</option>
                             </select>
                         </div>
                     </div>
@@ -161,8 +161,8 @@ if ($header_var == 'black') {
 
                 if(window.location.href.includes('https://de.')) {
                     selectMenu.innerHTML = "";
-                    selectMenu.add(new Option("German", "https://de.multisite-laurencesimons.com/de"));
-                    selectMenu.add(new Option("English", "https://multisite-laurencesimons.com/"));
+                    selectMenu.add(new Option("German", "https://laurencesimons.de"));
+                    selectMenu.add(new Option("English", "https://laurencesimons.com/"));
                 }
                 selectMenu.addEventListener('change', (event) => {
                     const url = event.target.value;
