@@ -85,7 +85,7 @@ if ($header_var == 'black') {
                         <div class="select-menu-wrapper">
                             <select id="select-menu">
                                 <option value="#">English</option>
-                                <option value="https://de.laurencesimons.com/de/">Deutsch</option>
+                                <option value="https://de.laurencesimons.com/">Deutsch</option>
                             </select>
                         </div>
                     </div>
