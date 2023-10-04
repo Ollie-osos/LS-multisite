@@ -161,7 +161,7 @@ if ($header_var == 'black') {
 
                 if(window.location.href.includes('https://de.')) {
                     selectMenu.innerHTML = "";
-                    selectMenu.add(new Option("German", "https://de.laurencesimons.com/de/"));
+                    selectMenu.add(new Option("German", "https://de.laurencesimons.com/"));
                     selectMenu.add(new Option("English", "https://laurencesimons.com/"));
                 }
                 selectMenu.addEventListener('change', (event) => {
